@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { dict } from "@/components/i18n";
 import {
+  import eyeposImg from "@/public/worline-eyepos.jpeg";
+
   ShieldCheck,
   Fingerprint,
   Smartphone,
