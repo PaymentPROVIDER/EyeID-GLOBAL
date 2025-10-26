@@ -16,15 +16,18 @@ import {
   Building2,
   Rocket,
   ArrowRight,
-} from "lucide-react";
+ } from "lucide-react";
 
+const COLORS = {
   gray: "bg-gray-200",
   lilac: "#ebe5ff",
-  btn: "#c6b8ff",
-  btnHover: "#b8a9ff",
-  gradFrom: "#d9caff",
-  gradVia: "#c9ffe7",
+  btn: "#6b68ff",
+  btnHover: "#8b8aff",
+  gradFrom: "#d9dcff",
+  gradVia: "#c9cff7",
   gradTo: "#b4a7ff",
+};
+
 };
 
 function PurpleButton({ href, children }) {
