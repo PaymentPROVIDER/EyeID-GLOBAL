@@ -53,7 +53,8 @@ export default function EyeIDGlobalPage(){
       <Image src={`${BASE}/brand/hero-eye.jpg`} alt='Biometry hero' width={1400} height={1000} className='w-full rounded-3xl shadow-2xl object-cover'/>
     </motion.div>
   </div></section>
-  <section id='ecosystem' className='py-16 bg-white'><div className='max-w-7xl mx-auto px-6'>
+  <section className="py-16 bg-[#ebe5ff]">
+<div className='max-w-7xl mx-auto px-6'>
     <h2 className='text-2xl font-semibold'>{t.ecosystem.title}</h2>
     <p className='text-slate-600 mt-1 max-w-2xl'>{t.ecosystem.p}</p>
     <div className='mt-8 grid md:grid-cols-3 gap-6'>
