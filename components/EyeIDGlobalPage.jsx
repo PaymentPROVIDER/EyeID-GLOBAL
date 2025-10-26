@@ -10,7 +10,8 @@ export default function EyeIDGlobalPage(){
  const features=[{icon:<Fingerprint className='w-5 h-5'/>,title:t.features[0].t,desc:t.features[0].d},{icon:<Smartphone className='w-5 h-5'/>,title:t.features[1].t,desc:t.features[1].d},{icon:<CreditCard className='w-5 h-5'/>,title:t.features[2].t,desc:t.features[2].d}];
  const terminal=[{icon:<Cpu className='w-4 h-4'/>,label:'Android OS 11'},{icon:<Wifi className='w-4 h-4'/>,label:'Wi-Fi / 4G / BT'},{icon:<Battery className='w-4 h-4'/>,label:'8h'},{icon:<CreditCard className='w-4 h-4'/>,label:'Payment card module'},{icon:<Fingerprint className='w-4 h-4'/>,label:'NFC / biometrics'},{icon:<ShieldCheck className='w-4 h-4'/>,label:'CE / PCI'}];
  const awards=['Cashless.pl','Forbes','myCompany','StartUp','European Fintech','PFR']; const partners=['VISA','Worldline','STRIPE','ITCARD','fido','iBeta'];
- return (<div className='min-h-screen bg-gradient-to-b from-white via-white to-slate-50 text-slate-900'>
+ return <div className="min-h-screen text-slate-900 bg-gradient-to-br from-[#b8a9ff] via-[#c3ffe8] to-[#a7c7ff]">
+
   <Head>
     <title>EYEID Global - biometric payments</title>
     <meta name='description' content='EYE ID - proprietary biometric payment ecosystem (face + iris). Faster, safer and more convenient payments.'/>
