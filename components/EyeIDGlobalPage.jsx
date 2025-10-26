@@ -16,29 +16,29 @@ export default function EyeIDGlobalPage() {
 
   const features = [
     { icon: <Fingerprint className="w-5 h-5" />, title: t.features[0].t, desc: t.features[0].d },
-    { icon: <Smartphone className="w-5 h-5" />, title: t.features[1].t, desc: t.features[1].d },
-    { icon: <CreditCard className="w-5 h-5" />, title: t.features[2].t, desc: t.features[2].d },
+    { icon: <Smartphone className="w-5 h-5" />,  title: t.features[1].t, desc: t.features[1].d },
+    { icon: <CreditCard className="w-5 h-5" />,  title: t.features[2].t, desc: t.features[2].d },
   ];
 
   const terminal = [
-    { icon: <Cpu className="w-4 h-4" />, label: 'Android OS 11' },
-    { icon: <Wifi className="w-4 h-4" />, label: 'Wi-Fi / 4G / BT' },
-    { icon: <Battery className="w-4 h-4" />, label: '8h' },
-    { icon: <CreditCard className="w-4 h-4" />, label: 'Payment card module' },
+    { icon: <Cpu className="w-4 h-4" />,         label: 'Android OS 11' },
+    { icon: <Wifi className="w-4 h-4" />,        label: 'Wi-Fi / 4G / BT' },
+    { icon: <Battery className="w-4 h-4" />,     label: '8h' },
+    { icon: <CreditCard className="w-4 h-4" />,  label: 'Payment card module' },
     { icon: <Fingerprint className="w-4 h-4" />, label: 'NFC / biometrics' },
     { icon: <ShieldCheck className="w-4 h-4" />, label: 'CE / PCI' },
   ];
 
-  const awards = ['Cashless.pl', 'Forbes', 'myCompany', 'StartUp', 'European Fintech', 'PFR'];
+  const awards   = ['Cashless.pl', 'Forbes', 'myCompany', 'StartUp', 'European Fintech', 'PFR'];
   const partners = ['VISA', 'Worldline', 'STRIPE', 'ITCARD', 'fido', 'iBeta'];
 
   // Kolory
   const softPurple = '#ebe5ff';
-  const btnPurple = '#c6b8ff';
-  const btnHover = '#b8a9ff';
+  const btnPurple  = '#c6b8ff';
+  const btnHover   = '#b8a9ff';
 
   return (
-    // SZARE TŁO CAŁEJ STRONY
+    // Globalne tło strony
     <div className="min-h-screen bg-gray-200 text-slate-900">
       <Head>
         <title>EYEID Global - biometric payments</title>
@@ -50,6 +50,7 @@ export default function EyeIDGlobalPage() {
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>
 
+      {/* Header */}
       <header className="sticky top-0 z-30 backdrop-blur bg-gray-200/80 border-b">
         <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -59,12 +60,12 @@ export default function EyeIDGlobalPage() {
 
           <nav className="hidden md:flex gap-6 text-sm">
             <a href="#ecosystem" className="hover:opacity-80">{t.nav.ecosystem}</a>
-            <a href="#why" className="hover:opacity-80">{t.nav.why}</a>
-            <a href="#strategy" className="hover:opacity-80">{t.nav.strategy}</a>
-            <a href="#terminal" className="hover:opacity-80">{t.nav.terminal}</a>
-            <a href="#zone" className="hover:opacity-80">{t.nav.zone}</a>
-            <a href="#awards" className="hover:opacity-80">{t.nav.awards}</a>
-            <a href="#contact" className="hover:opacity-80">{t.nav.contact}</a>
+            <a href="#why"        className="hover:opacity-80">{t.nav.why}</a>
+            <a href="#strategy"   className="hover:opacity-80">{t.nav.strategy}</a>
+            <a href="#terminal"   className="hover:opacity-80">{t.nav.terminal}</a>
+            <a href="#zone"       className="hover:opacity-80">{t.nav.zone}</a>
+            <a href="#awards"     className="hover:opacity-80">{t.nav.awards}</a>
+            <a href="#contact"    className="hover:opacity-80">{t.nav.contact}</a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -75,7 +76,6 @@ export default function EyeIDGlobalPage() {
               {lang.toUpperCase()}
             </button>
 
-            {/* PRZYCISK — jasny fiolet */}
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm border border-transparent"
@@ -104,15 +104,9 @@ export default function EyeIDGlobalPage() {
             <p className="mt-4 text-slate-600 max-w-xl">{t.hero.lead}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs">
-                <ShieldCheck className="w-4 h-4" />{t.badges.sec}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs">
-                <Globe2 className="w-4 h-4" />{t.badges.global}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs">
-                <Rocket className="w-4 h-4" />{t.badges.ux}
-              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs"><ShieldCheck className="w-4 h-4" />{t.badges.sec}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs"><Globe2 className="w-4 h-4" />{t.badges.global}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs"><Rocket className="w-4 h-4" />{t.badges.ux}</span>
             </div>
           </div>
 
@@ -123,6 +117,7 @@ export default function EyeIDGlobalPage() {
               width={1400}
               height={1000}
               className="w-full rounded-3xl shadow-2xl object-cover"
+              priority
             />
           </motion.div>
         </div>
@@ -195,7 +190,7 @@ export default function EyeIDGlobalPage() {
       {/* TERMINAL */}
       <section id="terminal" className="py-16" style={{ backgroundColor: softPurple }}>
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-          {/* lewa: grafika */}
+          {/* lewa: grafika w gradientowym boxie */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -204,11 +199,13 @@ export default function EyeIDGlobalPage() {
             className="relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br from-[#d9caff] via-[#c9ffe7] to-[#b4a7ff]"
           >
             <Image
-              src="/worline-eyepos.jpeg" // pamiętaj: /public/worline-eyepos.jpeg
+              src="/worline-eyepos.jpeg"   // plik musi być w /public
               alt="EYE ID eyepos terminal"
-              width={800}
-              height={600}
+              width={1000}
+              height={750}
               className="rounded-3xl object-contain w-full h-auto"
+              unoptimized
+              priority
             />
           </motion.div>
 
@@ -307,6 +304,7 @@ export default function EyeIDGlobalPage() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="border-t py-6 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} EYEID Global. {t.footer}
       </footer>
