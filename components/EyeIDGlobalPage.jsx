@@ -36,7 +36,7 @@ export default function EyeIDGlobalPage(){
 
   return (
     // === SZARE TŁO CAŁEJ STRONY ===
-    <div className="min-h-screen bg-gray-100 text-slate-900">
+    <div className="min-h-screen bg-gray-250 text-slate-900">
 
       <Head>
         <title>EYEID Global - biometric payments</title>
@@ -48,7 +48,7 @@ export default function EyeIDGlobalPage(){
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>
 
-      <header className="sticky top-0 z-30 backdrop-blur bg-gray-100/80 border-b">
+      <header className="sticky top-0 z-30 backdrop-blur bg-gray-250/80 border-b">
         <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src={`${BASE}/eyeid-logo.svg`} alt="EYEID Global" width={36} height={36}/>
@@ -134,7 +134,7 @@ export default function EyeIDGlobalPage(){
 
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {features.map((f,i)=>(
-              <div key={i} className="rounded-2xl border p-6 bg-gray-100">
+              <div key={i} className="rounded-2xl border p-6 bg-gray-250">
                 <div className="flex items-center gap-2 font-medium">{f.icon}{f.title}</div>
                 <p className="text-sm text-slate-600 mt-1">{f.desc}</p>
               </div>
@@ -145,7 +145,7 @@ export default function EyeIDGlobalPage(){
 
       <section id="why" className="py-16" style={{ backgroundColor: softPurple }}>
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-start">
-          <div className="rounded-3xl border p-8 bg-gray-100">
+          <div className="rounded-3xl border p-8 bg-gray-250">
             <h3 className="text-xl font-semibold">{t.why.aTitle}</h3>
             <p className="text-slate-600 mt-2">{t.why.aText}</p>
             <ul className="space-y-2 mt-4 text-sm text-slate-700 list-disc pl-5">
@@ -153,7 +153,7 @@ export default function EyeIDGlobalPage(){
             </ul>
           </div>
 
-          <div className="rounded-3xl border p-8 bg-gray-100">
+          <div className="rounded-3xl border p-8 bg-gray-250">
             <h3 className="text-xl font-semibold">{t.why.bTitle}</h3>
             <p className="text-slate-600 mt-2">{t.why.bText}</p>
             <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
@@ -171,14 +171,14 @@ export default function EyeIDGlobalPage(){
           <p className="text-slate-600 mt-1">{t.strategy.p}</p>
 
           <div className="mt-8 grid lg:grid-cols-2 gap-6">
-            <div className="rounded-2xl border p-6 bg-gray-100">
+            <div className="rounded-2xl border p-6 bg-gray-250">
               <h4 className="font-medium">User journey</h4>
               <ol className="mt-3 space-y-2 text-sm list-decimal pl-5">
                 {t.strategy.user.map((x,i)=>(<li key={i}>{x}</li>))}
               </ol>
             </div>
 
-            <div className="rounded-2xl border p-6 bg-gray-100">
+            <div className="rounded-2xl border p-6 bg-gray-250">
               <h4 className="font-medium">Merchant journey</h4>
               <ol className="mt-3 space-y-2 text-sm list-decimal pl-5">
                 {t.strategy.merch.map((x,i)=>(<li key={i}>{x}</li>))}
@@ -188,15 +188,16 @@ export default function EyeIDGlobalPage(){
         </div>
       </section>
 
-      <section id='terminal' className='py-16 bg-[#ebe5ff]'>
+     <section id='terminal' className='py-16 bg-[#ebe5ff]'>
   <div className='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center'>
-    {/* LEWA STRONA — terminal */}
+    
+    {/* LEWA STRONA — terminal z gradientem */}
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className='relative flex justify-center items-center bg-[#f4ebff] rounded-3xl shadow-2xl p-6'
+      className='relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br from-[#d9caff] via-[#c9ffe7] to-[#b4a7ff]'
     >
       <Image
         src='/worline-eyepos.jpeg'
@@ -214,11 +215,12 @@ export default function EyeIDGlobalPage(){
       </h2>
       <p className='text-slate-600 mt-1'>-</p>
 
+      {/* parametry */}
       <div className='mt-6 grid sm:grid-cols-2 gap-3'>
         {terminal.map((s, i) => (
           <div
             key={i}
-            className='rounded-xl border p-3 bg-gray-100 flex items-center gap-2 text-sm'
+            className='rounded-xl border p-3 bg-gray-250 flex items-center gap-2 text-sm'
           >
             {s.icon}
             {s.label}
@@ -226,7 +228,8 @@ export default function EyeIDGlobalPage(){
         ))}
       </div>
 
-      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-100 text-sm italic'>
+      {/* cytat */}
+      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-250 text-sm italic'>
         {t.terminal.q}
       </blockquote>
     </div>
@@ -251,7 +254,148 @@ export default function EyeIDGlobalPage(){
 
           <div className="mt-8 grid md:grid-cols-3 gap-6 text-sm">
             {t.zone.cards.map(x=>(
-              <div key={x} className="rounded-2xl border p-6 bg-gray-100">
+              <div key={x} className="rounded-2xl border p-6 bg-gray-<section id='terminal' className='py-16 bg-[#ebe5ff]'>
+  <div className='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center'>
+    
+    {/* LEWA STRONA — terminal z gradientem */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className='relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br from-[#d9caff] via-[#c9ffe7] to-[#b4a7ff]'
+    >
+      <Image
+        src='/worline-eyepos.jpeg'
+        alt='EYE ID eyepos terminal'
+        width={800}
+        height={600}
+        className='rounded-3xl object-contain w-full h-auto'
+      />
+    </motion.div>
+
+    {/* PRAWA STRONA — opis */}
+    <div>
+      <h2 className='text-2xl font-semibold text-slate-900'>
+        {t.terminal.title}
+      </h2>
+      <p className='text-slate-600 mt-1'>-</p>
+
+      {/* parametry */}
+      <div className='mt-6 grid sm:grid-cols-2 gap-3'>
+        {terminal.map((s, i) => (
+          <div
+            key={i}
+            className='rounded-xl border p-3 bg-gray-<section id='terminal' className='py-16 bg-[#ebe5ff]'>
+  <div className='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center'>
+    
+    {/* LEWA STRONA — terminal z gradientem */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className='relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br from-[#d9caff] via-[#c9ffe7] to-[#b4a7ff]'
+    >
+      <Image
+        src='/worline-eyepos.jpeg'
+        alt='EYE ID eyepos terminal'
+        width={800}
+        height={600}
+        className='rounded-3xl object-contain w-full h-auto'
+      />
+    </motion.div>
+
+    {/* PRAWA STRONA — opis */}
+    <div>
+      <h2 className='text-2xl font-semibold text-slate-900'>
+        {t.terminal.title}
+      </h2>
+      <p className='text-slate-600 mt-1'>-</p>
+
+      {/* parametry */}
+      <div className='mt-6 grid sm:grid-cols-2 gap-3'>
+        {terminal.map((s, i) => (
+          <div
+            key={i}
+            className='rounded-xl border p-3 bg-gray-<section id='terminal' className='py-16 bg-[#ebe5ff]'>
+  <div className='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center'>
+    
+    {/* LEWA STRONA — terminal z gradientem */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className='relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br from-[#d9caff] via-[#c9ffe7] to-[#b4a7ff]'
+    >
+      <Image
+        src='/worline-eyepos.jpeg'
+        alt='EYE ID eyepos terminal'
+        width={800}
+        height={600}
+        className='rounded-3xl object-contain w-full h-auto'
+      />
+    </motion.div>
+
+    {/* PRAWA STRONA — opis */}
+    <div>
+      <h2 className='text-2xl font-semibold text-slate-900'>
+        {t.terminal.title}
+      </h2>
+      <p className='text-slate-600 mt-1'>-</p>
+
+      {/* parametry */}
+      <div className='mt-6 grid sm:grid-cols-2 gap-3'>
+        {terminal.map((s, i) => (
+          <div
+            key={i}
+            className='rounded-xl border p-3 bg-gray-250 flex items-center gap-2 text-sm'
+          >
+            {s.icon}
+            {s.label}
+          </div>
+        ))}
+      </div>
+
+      {/* cytat */}
+      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-250 text-sm italic'>
+        {t.terminal.q}
+      </blockquote>
+    </div>
+  </div>
+</section>
+ flex items-center gap-2 text-sm'
+          >
+            {s.icon}
+            {s.label}
+          </div>
+        ))}
+      </div>
+
+      {/* cytat */}
+      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-250 text-sm italic'>
+        {t.terminal.q}
+      </blockquote>
+    </div>
+  </div>
+</section>
+ flex items-center gap-2 text-sm'
+          >
+            {s.icon}
+            {s.label}
+          </div>
+        ))}
+      </div>
+
+      {/* cytat */}
+      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-250 text-sm italic'>
+        {t.terminal.q}
+      </blockquote>
+    </div>
+  </div>
+</section>
+">
                 <h4 className="font-medium">{x}</h4>
               </div>
             ))}
@@ -264,7 +408,7 @@ export default function EyeIDGlobalPage(){
           <h2 className="text-2xl font-semibold">{t.awards}</h2>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {awards.map(a=>(
-              <div key={a} className="rounded-xl border bg-gray-100 p-4 text-sm flex items-center justify-center gap-2">
+              <div key={a} className="rounded-xl border bg-gray-250 p-4 text-sm flex items-center justify-center gap-2">
                 <Award className="w-4 h-4"/>{a}
               </div>
             ))}
@@ -277,7 +421,7 @@ export default function EyeIDGlobalPage(){
           <h2 className="text-2xl font-semibold">{t.partners}</h2>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {partners.map(p=>(
-              <div key={p} className="rounded-xl border bg-gray-100 p-4 text-sm flex items-center justify-center">
+              <div key={p} className="rounded-xl border bg-gray-250 p-4 text-sm flex items-center justify-center">
                 {p}
               </div>
             ))}
@@ -297,7 +441,7 @@ export default function EyeIDGlobalPage(){
             </div>
           </div>
 
-          <div className="rounded-3xl border p-6 bg-gray-100">
+          <div className="rounded-3xl border p-6 bg-gray-250">
             <form className="grid gap-3" onSubmit={(e)=>e.preventDefault()}>
               <input className="rounded-2xl border px-4 py-3" placeholder="Imie i nazwisko / Full name"/>
               <input className="rounded-2xl border px-4 py-3" placeholder="E-mail" type="email"/>
