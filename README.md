@@ -1,5 +1,5 @@
 # EYEID Global - Next.js (pages) + i18n (PL default)
-- PL domyslnie, przelacznik PL/EN
+- EN domyslnie, przelacznik EN/PL
 - Bez dark mode
 - SEO: meta + og-image + favicon
 
