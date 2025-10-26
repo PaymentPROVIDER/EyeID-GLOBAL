@@ -4,8 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { dict } from "@/components/i18n";
 import {
-  import eyeposImg from "@/public/worline-eyepos.jpeg";
-
   ShieldCheck,
   Fingerprint,
   Smartphone,
@@ -20,10 +18,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import heroEye from "@/public/brand/hero-eye.jpg";
-import eyepos from "@/public/worline-eyepos.jpeg";
-
-const COLORS = {
   gray: "bg-gray-200",
   lilac: "#ebe5ff",
   btn: "#c6b8ff",
