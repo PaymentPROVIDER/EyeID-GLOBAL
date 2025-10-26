@@ -149,12 +149,14 @@ export default function EyeIDGlobalPage() {
           </div>
           <motion.div {...fadeUp} className="relative">
             <Image
-              src={heroEye}
-              alt="Biometry hero"
-              width={1400}
-              height={1000}
-              className="w-full rounded-3xl shadow-2xl object-cover"
-              priority
+  src="/brand/hero-eye.jpg"
+  alt="EYE ID hero"
+  width={1400}
+  height={1000}
+  className="rounded-3xl object-cover w-full h-auto"
+  priority
+/>
+
             />
           </motion.div>
         </div>
@@ -171,12 +173,15 @@ export default function EyeIDGlobalPage() {
             }}
           >
             <Image
-  src={eyeposImg}
+  src="/worline-eyepos.jpeg"
   alt="EYE ID eyepos terminal"
   width={1000}
   height={750}
   className="rounded-3xl object-contain w-full h-auto"
+  unoptimized
   priority
+/>
+
 />
 
             />
