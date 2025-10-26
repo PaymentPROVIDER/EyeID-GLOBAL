@@ -28,7 +28,6 @@ const COLORS = {
   gradTo: "#b4a7ff",
 };
 
-};
 
 function PurpleButton({ href, children }) {
   return (
