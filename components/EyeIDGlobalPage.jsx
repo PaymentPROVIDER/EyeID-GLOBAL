@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
@@ -18,25 +18,20 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-/**
- * Konfiguracja ścieżek i kolorów (w jednym miejscu)
- */
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+// Globalne kolory używane w całym komponencie
 const COLORS = {
   pageGray: "bg-gray-200",
-  sectionLilac: "#ebe5ff",
   cardGray: "bg-gray-200",
+  lilac: "#ebe5ff",
   btn: "#c6b8ff",
   btnHover: "#b8a9ff",
-  gradientFrom: "#d9caff",
-  gradientVia: "#c9ffe7",
-  gradientTo: "#b4a7ff",
+  gradFrom: "#d9caff",
+  gradVia: "#c9ffe7",
+  gradTo: "#b4a7ff",
 };
 
-/**
- * Mały, powtarzalny przycisk w fiolecie
- */
-function PurpleButton({ children, href }) {
+// Prostokątny przycisk w fiolecie
+function PurpleButton({ href, children }) {
   return (
     <a
       href={href}
@@ -48,14 +43,6 @@ function PurpleButton({ children, href }) {
       {children}
     </a>
   );
-}
-
-/**
- * Bezpieczny wrapper na Image do Netlify (bez optymalizacji CDN Next)
- * Zawsze wymagane width/height, className przepuszczane dalej.
- */
-function SafeImage(props) {
-  return <Image unoptimized priority {...props} />;
 }
 
 export default function EyeIDGlobalPage() {
@@ -89,7 +76,12 @@ export default function EyeIDGlobalPage() {
 
   const fadeUp = prefersReducedMotion
     ? {}
-    : { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } };
+    : {
+        initial: { opacity: 0, y: 10 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.5 },
+      };
 
   return (
     <div className={`min-h-screen ${COLORS.pageGray} text-slate-900`}>
@@ -110,7 +102,7 @@ export default function EyeIDGlobalPage() {
       <header className="sticky top-0 z-30 backdrop-blur bg-gray-200/80 border-b" role="navigation" aria-label="Główna nawigacja">
         <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src={`${BASE}/eyeid-logo.svg`} alt="EYEID Global" width={36} height={36} priority />
+            <Image src="/eyeid-logo.svg" alt="EYEID Global" width={36} height={36} priority />
             <span className="font-semibold">EYEID Global</span>
           </div>
 
@@ -132,7 +124,6 @@ export default function EyeIDGlobalPage() {
             >
               {lang.toUpperCase()}
             </button>
-
             <PurpleButton href="#contact">
               {t.nav.cta} <ArrowRight className="w-4 h-4" />
             </PurpleButton>
@@ -141,7 +132,7 @@ export default function EyeIDGlobalPage() {
       </header>
 
       {/* HERO */}
-      <section className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <motion.h1 {...fadeUp} className="text-4xl md:text-6xl font-bold tracking-tight">
@@ -163,19 +154,21 @@ export default function EyeIDGlobalPage() {
           </div>
 
           <motion.div {...fadeUp} className="relative">
-            <SafeImage
-              src={`${BASE}/brand/hero-eye.jpg`}
+            <Image
+              src="/brand/hero-eye.jpg"
               alt="Biometry hero"
               width={1400}
               height={1000}
               className="w-full rounded-3xl shadow-2xl object-cover"
+              unoptimized
+              priority
             />
           </motion.div>
         </div>
       </section>
 
       {/* EKOSYSTEM */}
-      <section id="ecosystem" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="ecosystem" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-semibold">{t.ecosystem.title}</h2>
           <p className="text-slate-600 mt-1 max-w-2xl">{t.ecosystem.p}</p>
@@ -192,7 +185,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* WHY */}
-      <section id="why" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="why" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-start">
           <div className={`rounded-3xl border p-8 ${COLORS.cardGray}`}>
             <h3 className="text-xl font-semibold">{t.why.aTitle}</h3>
@@ -215,12 +208,12 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* STRATEGY */}
-      <section id="strategy" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="strategy" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-semibold">{t.strategy.title}</h2>
           <p className="text-slate-600 mt-1">{t.strategy.p}</p>
 
-          <div className="mt-8 grid lg:grid-cols-2 gap-6">
+        <div className="mt-8 grid lg:grid-cols-2 gap-6">
             <div className={`rounded-2xl border p-6 ${COLORS.cardGray}`}>
               <h4 className="font-medium">User journey</h4>
               <ol className="mt-3 space-y-2 text-sm list-decimal pl-5">
@@ -239,7 +232,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* TERMINAL */}
-      <section id="terminal" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="terminal" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
           <motion.div
             {...(prefersReducedMotion
@@ -250,17 +243,17 @@ export default function EyeIDGlobalPage() {
                   viewport: { once: true },
                   transition: { duration: 0.6 },
                 })}
-            className={`relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br`}
-            style={{
-              backgroundImage: `linear-gradient(135deg, ${COLORS.gradientFrom}, ${COLORS.gradientVia}, ${COLORS.gradientTo})`,
-            }}
+            className="relative flex justify-center items-center rounded-3xl shadow-2xl p-6 bg-gradient-to-br"
+            style={{ backgroundImage: `linear-gradient(135deg, ${COLORS.gradFrom}, ${COLORS.gradVia}, ${COLORS.gradTo})` }}
           >
-            <SafeImage
-              src={`${BASE}/worline-eyepos.jpeg`} // musi istnieć w /public
+            <Image
+              src="/worline-eyepos.jpeg"   // plik w /public
               alt="EYE ID eyepos terminal"
               width={1000}
               height={750}
               className="rounded-3xl object-contain w-full h-auto"
+              unoptimized
+              priority
             />
           </motion.div>
 
@@ -285,7 +278,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* ZONE */}
-      <section id="zone" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="zone" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-semibold">{t.zone.title}</h2>
           <p className="text-slate-600 mt-1 max-w-2xl">{t.zone.p}</p>
@@ -301,7 +294,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* AWARDS */}
-      <section id="awards" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="awards" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-semibold">{t.awards}</h2>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -316,7 +309,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-semibold">{t.partners}</h2>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -330,7 +323,7 @@ export default function EyeIDGlobalPage() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-16" style={{ backgroundColor: COLORS.sectionLilac }}>
+      <section id="contact" className="py-16 bg-[#ebe5ff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl font-semibold">{t.contact.title}</h2>
@@ -341,16 +334,10 @@ export default function EyeIDGlobalPage() {
                 {t.contact.hq}
               </div>
               <div>
-                {t.contact.email}:{" "}
-                <a href="mailto:office@eyeidglobal.com" className="underline">
-                  office@eyeidglobal.com
-                </a>
+                {t.contact.email}: <a href="mailto:office@eyeidglobal.com" className="underline">office@eyeidglobal.com</a>
               </div>
               <div>
-                {t.contact.site}:{" "}
-                <a href="https://www.eyeidglobal.com" className="underline">
-                  www.eyeidglobal.com
-                </a>
+                {t.contact.site}: <a href="https://www.eyeidglobal.com" className="underline">www.eyeidglobal.com</a>
               </div>
             </div>
           </div>
@@ -373,4 +360,3 @@ export default function EyeIDGlobalPage() {
     </div>
   );
 }
-
