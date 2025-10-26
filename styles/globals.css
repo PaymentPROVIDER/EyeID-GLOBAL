@@ -1,4 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html,body,#__next{height:100%;}
+html, body {
+  min-height: 100%;
+  background: linear-gradient(135deg, #b8a9ff 0%, #c3ffe8 50%, #a7c7ff 100%);
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Efekt delikatnej biometrycznej mgiełki */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(186, 255, 235, 0.4), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(183, 164, 255, 0.4), transparent 60%);
+  z-index: -1;
+}
