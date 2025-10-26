@@ -174,15 +174,16 @@ export default function EyeIDGlobalPage() {
               backgroundImage: `linear-gradient(135deg, ${COLORS.gradFrom}, ${COLORS.gradVia}, ${COLORS.gradTo})`,
             }}
           >
-            <Image
+           <Image
   src="/worline-eyepos.jpeg"
   alt="EYE ID eyepos terminal"
   width={1000}
   height={750}
   className="rounded-3xl object-contain w-full h-auto"
-  unoptimized
   priority
+  unoptimized
 />
+
 
 />
 
