@@ -96,7 +96,7 @@ export default function EyeIDGlobalPage() {
         />
         <meta property="og:title" content="EYEID Global — biometric payments" />
         <meta property="og:description" content="Proprietary biometric payment ecosystem (face + iris)." />
-        <meta property="og:image" content="/icons/og-image.jpg" />
+        <meta property="og:" content="/icons/og-.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>
@@ -105,7 +105,7 @@ export default function EyeIDGlobalPage() {
       <header className="sticky top-0 z-30 backdrop-blur bg-gray-200/80 border-b">
         <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/eyeid-logo.svg" alt="EYEID Global" width={36} height={36} priority />
+            < src="/eyeid-logo.svg" alt="EYEID Global" width={36} height={36} priority />
             <span className="font-semibold">EYEID Global</span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
@@ -177,12 +177,14 @@ export default function EyeIDGlobalPage() {
             }}
           >
             <Image
-              src={eyepos}
-              alt="EYE ID eyepos terminal"
-              width={1000}
-              height={750}
-              className="rounded-3xl object-contain w-full h-auto"
-              priority
+  src={eyeposImg}
+  alt="EYE ID eyepos terminal"
+  width={1000}
+  height={750}
+  className="rounded-3xl object-contain w-full h-auto"
+  priority
+/>
+
             />
           </motion.div>
 
