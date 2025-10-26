@@ -209,6 +209,8 @@ export default function EyeIDGlobalPage() {
         </div>
       </section>
 
+      {/* (opcjonalnie: inne sekcje dodamy później — najpierw dowieziemy obraz i kolor) */}
+
       <footer className="border-t py-6 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} EYEID Global. All rights reserved.
       </footer>
