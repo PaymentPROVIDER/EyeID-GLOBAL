@@ -188,26 +188,51 @@ export default function EyeIDGlobalPage(){
         </div>
       </section>
 
-      <section id="terminal" className="py-16" style={{ backgroundColor: softPurple }}>
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-          <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}} className="relative">
-            <Image
-              src={`${BASE}/brand/eyepos.jpg`}
-              alt="EYE ID eyepos terminal"
-              width={1200}
-              height={900}
-              className="w-full rounded-3xl shadow-2xl object-cover"
-            />
-          </motion.div>
+      <section id='terminal' className='py-16 bg-[#ebe5ff]'>
+  <div className='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center'>
+    {/* LEWA STRONA — terminal */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className='relative flex justify-center items-center bg-[#f4ebff] rounded-3xl shadow-2xl p-6'
+    >
+      <Image
+        src='/worline-eyepos.jpeg'
+        alt='EYE ID eyepos terminal'
+        width={800}
+        height={600}
+        className='rounded-3xl object-contain w-full h-auto'
+      />
+    </motion.div>
 
-          <div>
-            <h2 className="text-2xl font-semibold">{t.terminal.title}</h2>
-            <p className="text-slate-600 mt-1">-</p>
+    {/* PRAWA STRONA — opis */}
+    <div>
+      <h2 className='text-2xl font-semibold text-slate-900'>
+        {t.terminal.title}
+      </h2>
+      <p className='text-slate-600 mt-1'>-</p>
 
-            <div className="mt-6 grid sm:grid-cols-2 gap-3">
-              {terminal.map((s,i)=>(
-                <div key={i} className="rounded-xl border p-3 bg-gray-100 flex items-center gap-2 text-sm">
-                  {s.icon}{s.label}
+      <div className='mt-6 grid sm:grid-cols-2 gap-3'>
+        {terminal.map((s, i) => (
+          <div
+            key={i}
+            className='rounded-xl border p-3 bg-gray-100 flex items-center gap-2 text-sm'
+          >
+            {s.icon}
+            {s.label}
+          </div>
+        ))}
+      </div>
+
+      <blockquote className='mt-6 rounded-2xl border p-5 bg-gray-100 text-sm italic'>
+        {t.terminal.q}
+      </blockquote>
+    </div>
+  </div>
+</section>
+
                 </div>
               ))}
             </div>
